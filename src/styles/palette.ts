@@ -5,9 +5,9 @@ interface IPalette {
 	green: string;
 	lighterGreen: string;
 	main: string;
+	blue: string;
 	skyBlue: string;
 	navy: string;
-	purple: string;
 	pink: string;
 	mint: string;
 	lighterGray: string;
@@ -29,10 +29,10 @@ export const palette: IPalette = {
 	yellow: '#faef18',
 	green: '#3fb950',
 	lighterGreen: '#1bcc8c',
-	main: '#3370ff',
+	main: '#8445ff',
+	blue: '#3370ff',
 	skyBlue: '#00a8ff',
 	navy: '#000080',
-	purple: '#8445ff',
 	mint: '#31e1eb',
 	pink: '#E0234E',
 	gray: '#9e9e9e',
