@@ -1,29 +1,4 @@
-interface IPalette {
-	red: string;
-	orange: string;
-	yellow: string;
-	green: string;
-	lighterGreen: string;
-	main: string;
-	blue: string;
-	skyBlue: string;
-	navy: string;
-	pink: string;
-	mint: string;
-	lighterGray: string;
-	gray: string;
-	white: string;
-	lighterBlack: string;
-	black: string;
-	snow: string;
-	bronze: string;
-	silver: string;
-	platinum: string;
-	diamond: string;
-	master: string;
-};
-
-export const palette: IPalette = {
+export const palette = {
 	red: '#ff1001',
 	orange: '#ff811d',
 	yellow: '#faef18',

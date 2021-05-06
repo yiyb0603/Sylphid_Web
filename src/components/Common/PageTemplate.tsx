@@ -11,7 +11,7 @@ const PageTemplate = ({
   return (
     <>
       <Header />
-        {children}
+      {children}
       {/* <Footer /> */}
     </>
   );
