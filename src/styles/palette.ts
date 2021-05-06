@@ -15,10 +15,5 @@ export const palette = {
 	white: '#ffffff',
 	lighterBlack: '#495057',
 	black: '#000000',
-	snow: '#dff9fb',
-	bronze: '#cd7f32',
-	silver: '#c0c0c0',
-	platinum: '#44ad9a',
-	diamond: '#659abf',
-	master: '#fa465b',
+	snow: '#FAFBFC',
 };

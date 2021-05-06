@@ -10,6 +10,7 @@ type ButtonProps = {
   backgroundColor?: string;
   padding?: string;
   margin?: string;
+  fontSize?: string;
   children: ReactNode;
   onClick: () => void | Promise<void>;
 }
@@ -21,6 +22,7 @@ const Button = ({
   backgroundColor = palette.main,
   padding = '0, 0, 0, 0',
   margin = '0, 0, 0, 0',
+  fontSize = '14px',
   children,
   onClick,
 }: ButtonProps): JSX.Element => {
@@ -33,6 +35,7 @@ const Button = ({
         backgroundColor,
         padding,
         margin,
+        fontSize,
       })}
       onClick={onClick}
     >{children}</button>
@@ -46,6 +49,7 @@ type ButtonCSSProps = {
   backgroundColor: string;
   padding: string;
   margin: string;
+  fontSize: string;
 }
 
 const buttonCSS = ({
@@ -55,6 +59,7 @@ const buttonCSS = ({
   backgroundColor,
   padding,
   margin,
+  fontSize,
 }: ButtonCSSProps): SerializedStyles => css`
   width: ${width};
   height: ${height};
@@ -62,6 +67,7 @@ const buttonCSS = ({
   background-color: ${backgroundColor};
   padding: ${padding};
   margin: ${margin};
+  font-size: ${fontSize};
   outline: none;
   border: none;
   border-radius: 5px;
