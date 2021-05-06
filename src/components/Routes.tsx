@@ -9,6 +9,12 @@ const Routes = (): JSX.Element => {
         path='/'
         component={Pages.HomePage}
       />
+
+      <Route
+        exact
+        path='/translate'
+        component={Pages.TranslatePage}
+      />
     </Switch>
   );
 };

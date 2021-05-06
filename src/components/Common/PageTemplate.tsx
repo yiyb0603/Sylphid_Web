@@ -1,4 +1,5 @@
 import { Fragment, ReactNode } from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 type PageTemplateProps = {
@@ -12,7 +13,7 @@ const PageTemplate = ({
     <Fragment>
       <Header />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </Fragment>
   );
 }
