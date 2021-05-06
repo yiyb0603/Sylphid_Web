@@ -1,13 +1,13 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { css, Global, SerializedStyles } from '@emotion/react';
 import Routes from './Routes';
 
 const App = (): JSX.Element => {
   return (
-    <>
+    <Fragment>
       <Routes />
       <Global styles={globalStyle} />
-    </>
+    </Fragment>
   );
 };
 

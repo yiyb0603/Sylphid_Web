@@ -1,10 +1,10 @@
+import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { History } from 'history';
-import { css } from '@emotion/react';
-import usePathName from 'hooks/usePathName';
+import { css, SerializedStyles } from '@emotion/react';
+import usePathName from 'hooks/util/usePathName';
 import { fontSize } from 'styles/fontSize';
 import { palette } from 'styles/palette';
-import { useCallback } from 'react';
 
 type HeaderLinkItemProps = {
   name: string;
@@ -32,7 +32,7 @@ const HeaderLinkItem = ({
   );
 };
 
-const headerLinkItem = (pathName: string, route: string) => css`
+const headerLinkItem = (pathName: string, route: string): SerializedStyles => css`
   font-size: ${fontSize.small};
   margin-right: 3rem;
   border-bottom: ${pathName === route ? `1px solid ${palette.white}` : 'none'};
