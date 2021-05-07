@@ -15,6 +15,12 @@ const Routes = (): JSX.Element => {
         path='/translate'
         component={Pages.TranslatePage}
       />
+
+      <Route
+        exact
+        path='/short-url'
+        component={Pages.ShortURLPage}
+      />
     </Switch>
   );
 };
