@@ -1,10 +1,13 @@
 import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
-import Button from 'components/Common/Button';
+import useTranslate from 'hooks/translate/useTranslate';
 import { fontSize } from 'styles/fontSize';
+import Button from 'components/Common/Button';
 import TranslateBox from './TranslateBox';
 
 const Translate = (): JSX.Element => {
+  const { requestTranslate } = useTranslate();
+
   return (
     <div css={translateWrapper}>
       <TranslateBox />
@@ -13,7 +16,7 @@ const Translate = (): JSX.Element => {
         margin={'0.5rem 0 0 0'}
         padding={'0.5rem 0'}
         fontSize={fontSize.smallest}
-        onClick={() => {}}
+        onClick={requestTranslate}
       >
         번역하기
       </Button>

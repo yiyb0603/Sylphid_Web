@@ -1,17 +1,24 @@
 import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
+import useTranslate from 'hooks/translate/useTranslate';
 import { fontSize } from 'styles/fontSize';
 import { palette } from 'styles/palette';
 
 const TranslatePreview = (): JSX.Element => {
+  const { request, onChangeRequest, translatedText } = useTranslate();
+
   return (
     <div css={translatePreviewWrapper}>
       <textarea
         css={translateTextarea}
+        name='text'
+        value={request.text}
+        onChange={onChangeRequest}
       ></textarea>
 
       <textarea
         css={translatePreview}
+        value={translatedText}
         readOnly={true}
       ></textarea>
     </div>

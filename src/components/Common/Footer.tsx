@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
 import { fontSize } from 'styles/fontSize';
-import { palette } from 'styles/palette';
 
 const Footer = (): JSX.Element => {
   return (
@@ -14,7 +13,6 @@ const Footer = (): JSX.Element => {
 const footer: SerializedStyles = css`
   height: 70px;
   max-height: 70px;
-  background-color: ${palette.main};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +20,6 @@ const footer: SerializedStyles = css`
 
 const footerContents: SerializedStyles = css`
   font-size: ${fontSize.small};
-  color: ${palette.white};
 `;
 
 export default Footer;

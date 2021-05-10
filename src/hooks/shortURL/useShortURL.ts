@@ -2,9 +2,9 @@ import { useCallback, ChangeEvent, KeyboardEvent } from 'react';
 import { useRecoilState } from 'recoil';
 import { shortURLState, urlRequestState } from 'atom/shortURL';
 import { IShortURLDto } from 'lib/dto/shortURL.dto';
-import { validateShortURL } from 'validation/shortURL.validation';
 import shortURLRepository from 'lib/repository/shortURL.repository';
 import { EResponse } from 'lib/enum/Response';
+import { validateShortURL } from 'validation/shortURL.validation';
 
 const useShortURL = () => {
   const [request, setRequest] = useRecoilState<IShortURLDto>(urlRequestState);
