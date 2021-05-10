@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
 import { Tooltip } from '@mantine/core';
 import useShortURL from 'hooks/shortURL/useShortURL';
-import { AiOutlineLink } from 'react-icons/ai';
+import { RiInputMethodLine } from 'react-icons/ri';
 import { MdClose } from 'react-icons/md';
 import { fontSize } from 'styles/fontSize';
 import { palette } from 'styles/palette';
@@ -11,6 +11,7 @@ const ShortURLInput = (): JSX.Element => {
   const {
     request,
     onChangeRequest,
+    onCancel,
     onKeydownRequest,
   } = useShortURL();
 
@@ -23,7 +24,7 @@ const ShortURLInput = (): JSX.Element => {
     >
       <div css={shortURLInputWrapper}>
         <div css={inputLeftWrapper}>
-          <AiOutlineLink
+          <RiInputMethodLine
             css={clipIcon}
           />
 
@@ -35,22 +36,27 @@ const ShortURLInput = (): JSX.Element => {
             onChange={onChangeRequest}
             onKeyDown={onKeydownRequest}
             placeholder='긴 링크를 입력해주세요.'
+            autoComplete='off'
           />
         </div>
 
-        <MdClose css={shortURLCancel} />
+        <MdClose
+          css={shortURLCancel}
+          onClick={onCancel}
+        />
       </div>
     </Tooltip>
   );
 };
 
 const shortURLInputWrapper: SerializedStyles = css`
-  width: 400px;
+  width: 425px;
   display: flex;
   align-items: center;
   border: 1px solid ${palette.main};
   border-radius: 25px;
   padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const inputLeftWrapper: SerializedStyles = css`
@@ -75,7 +81,12 @@ const shortURLInput: SerializedStyles = css`
 
 const shortURLCancel: SerializedStyles = css`
   font-size: ${fontSize.contents};
+  transition: 0.15s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    color: ${palette.red};
+  }
 `;
 
 export default ShortURLInput;

@@ -9,8 +9,9 @@ const LanguageSelect = (): JSX.Element => {
   const { request, onChangeRequest, handleExchangeLanguage } = useTranslate();
 
   return (
-    <div css={languageSelect}>
+    <div css={languageSelectWrapper}>
       <select
+        css={languageSelect}
         name='source'
         value={request.source}
         onChange={onChangeRequest}
@@ -32,6 +33,7 @@ const LanguageSelect = (): JSX.Element => {
       />
       
       <select
+        css={languageSelect}
         name='target'
         value={request.target}
         onChange={onChangeRequest}
@@ -51,7 +53,7 @@ const LanguageSelect = (): JSX.Element => {
   );
 };
 
-const languageSelect: SerializedStyles = css`
+const languageSelectWrapper: SerializedStyles = css`
   height: 60px;
   display: flex;
   justify-content: space-evenly;
@@ -61,6 +63,10 @@ const languageSelect: SerializedStyles = css`
     font-size: ${fontSize.small};
     cursor: pointer;
   }
+`;
+
+const languageSelect: SerializedStyles = css`
+  border: none;
 `;
 
 export default LanguageSelect;

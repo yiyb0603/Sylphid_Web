@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
+import ReceiveURL from './ReceiveURL';
 import ShortURLInput from './ShortURLInput';
 import ShortURLTitle from './ShortURLTitle';
 
@@ -8,6 +9,7 @@ const ShortURL = (): JSX.Element => {
     <div css={shortURL}>
       <ShortURLTitle />
       <ShortURLInput />
+      <ReceiveURL />
     </div>
   );
 };

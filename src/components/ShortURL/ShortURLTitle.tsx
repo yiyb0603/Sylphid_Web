@@ -10,6 +10,7 @@ const ShortURLTitle = (): JSX.Element => {
 
 const shortURLTitle: SerializedStyles = css`
   font-size: ${fontSize.big};
+  font-weight: 500;
   margin-bottom: 1rem;
 `;
 

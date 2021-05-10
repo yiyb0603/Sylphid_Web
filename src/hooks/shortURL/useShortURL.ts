@@ -1,6 +1,6 @@
 import { useCallback, ChangeEvent, KeyboardEvent } from 'react';
 import { useRecoilState } from 'recoil';
-import { shortURLState, urlRequestState } from 'atom/shortURL';
+import { initialURLState, shortURLState, urlRequestState } from 'atom/shortURL';
 import { IShortURLDto } from 'lib/dto/shortURL.dto';
 import shortURLRepository from 'lib/repository/shortURL.repository';
 import { EResponse } from 'lib/enum/Response';
@@ -18,6 +18,11 @@ const useShortURL = () => {
       [name]: value,
     }));
   }, [setRequest]);
+
+  const onCancel = useCallback((): void => {
+    setRequest(initialURLState);
+    setShortURL('');
+  }, [setRequest, setShortURL]);
 
   const requestShortURL = useCallback(async (): Promise<void> => {
     try {
@@ -43,6 +48,7 @@ const useShortURL = () => {
   return {
     request,
     onChangeRequest,
+    onCancel,
     onKeydownRequest,
     shortURL,
   };
