@@ -21,6 +21,18 @@ const Routes = (): JSX.Element => {
         path='/short-url'
         component={Pages.ShortURLPage}
       />
+
+      <Route
+        exact
+        path='/search'
+        component={Pages.SelectTypePage}
+      />
+
+      <Route
+        exact
+        path='/search/:type'
+        component={Pages.SearchPage}
+      />
     </Switch>
   );
 };
