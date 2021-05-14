@@ -12,3 +12,11 @@ export const ellipsisLine = (lineClamp: number): SerializedStyles => {
     -webkit-line-clamp: lineClamp;
   `;
 }
+
+export const resetInput = (): SerializedStyles => {
+  return css`
+    outline: none;
+    border: none;
+    background: none;
+  `;
+}
