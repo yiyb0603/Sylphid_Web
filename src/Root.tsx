@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import { Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import { historySingleton } from 'lib/singleton/history';
@@ -8,9 +8,11 @@ const Root = (): JSX.Element => {
   return (
     <RecoilRoot>
       <Router history={historySingleton}>
-        <StrictMode>
-          <App />
-        </StrictMode>
+        <Suspense fallback={null}>
+          <StrictMode>
+            <App />
+          </StrictMode>
+        </Suspense>
       </Router>
     </RecoilRoot>
   );

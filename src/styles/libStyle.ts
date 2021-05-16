@@ -9,7 +9,7 @@ export const ellipsisLine = (lineClamp: number): SerializedStyles => {
     -ms-word-break: break-all;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: lineClamp;
+    -webkit-line-clamp: ${lineClamp};
   `;
 }
 

@@ -1,6 +1,6 @@
 import { useCallback, ChangeEvent, KeyboardEvent } from 'react';
 import { useRecoilState } from 'recoil';
-import { initialURLState, shortURLState, urlRequestState } from 'atom/shortURL';
+import { initialURLState, shortURLState, urlRequestState } from 'lib/recoil/atom/shortURL';
 import { IShortURLDto } from 'lib/dto/shortURL.dto';
 import shortURLRepository from 'lib/repository/shortURL.repository';
 import { EResponse } from 'lib/enum/Response';

@@ -7,7 +7,7 @@ import { resetInput } from 'styles/libStyle';
 import { palette } from 'styles/palette';
 
 const SearchBar = (): JSX.Element => {
-  const { keyword, onChangeKeyword } = useSearch();
+  const { keyword, onChangeKeyword, onKeydownSearch } = useSearch();
 
   return (
     <div css={searchBar}>
@@ -18,6 +18,7 @@ const SearchBar = (): JSX.Element => {
         type='text'
         value={keyword}
         onChange={onChangeKeyword}
+        onKeyDown={onKeydownSearch}
         placeholder='검색어를 입력하세요'
       />
     </div>

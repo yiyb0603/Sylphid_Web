@@ -35,7 +35,7 @@ const HeaderLinkItem = ({
 const headerLinkItem = (pathName: string, route: string): SerializedStyles => css`
   font-size: ${fontSize.small};
   margin-right: 3rem;
-  border-bottom: ${pathName === route ? `1px solid ${palette.white}` : 'none'};
+  border-bottom: ${(pathName === route) || (route !== '/' && pathName.includes(route)) ? `1px solid ${palette.white}` : 'none'};
   padding-bottom: 0.25rem;
   cursor: pointer;
 `;

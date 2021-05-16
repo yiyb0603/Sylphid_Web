@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
-import { requestTranslateState, translatedTextState } from 'atom/translate';
+import { requestTranslateState, translatedTextState } from 'lib/recoil/atom/translate';
 import { ITranslateDto } from 'lib/dto/translate.dto';
 import { EResponse } from 'lib/enum/Response';
 import translateRepository from 'lib/repository/translate.repository';
