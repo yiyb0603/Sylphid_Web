@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import * as Pages from 'pages';
 
 const Routes = (): JSX.Element => {
@@ -33,6 +33,14 @@ const Routes = (): JSX.Element => {
         path='/search/:type'
         component={Pages.SearchPage}
       />
+
+      <Route
+        exact
+        path='/not-found'
+        component={Pages.NotFoundPage}
+      />
+
+      <Redirect to='/not-found' />
     </Switch>
   );
 };

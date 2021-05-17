@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import { css } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils';
 import { palette } from 'styles/palette';
@@ -78,4 +78,4 @@ const buttonCSS = ({
   }
 `;
 
-export default Button;
+export default memo(Button);

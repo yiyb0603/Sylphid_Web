@@ -36,6 +36,7 @@ const Search = (): JSX.Element => {
 const searchResultsWrapper: SerializedStyles = css`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
 `;
 
 export default memo(Search);
