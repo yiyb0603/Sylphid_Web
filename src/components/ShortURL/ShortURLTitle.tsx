@@ -4,7 +4,7 @@ import { fontSize } from 'styles/fontSize';
 
 const ShortURLTitle = (): JSX.Element => {
   return (
-    <div css={shortURLTitle}>링크는 심플하게 Sylphid</div>
+    <div css={shortURLTitle}>단축 URL 지정</div>
   );
 };
 

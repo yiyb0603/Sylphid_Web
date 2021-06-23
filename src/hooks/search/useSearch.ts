@@ -35,7 +35,6 @@ const useSearch = () => {
   }, [keyword, page, setSearchResults, type]);
 
   const handleScroll = useCallback((): void => {
-    console.log(isBottomPosition());
     if (isBottomPosition()) {
       setPage((prevPage: number) => prevPage + 1);
       handleSearch();
@@ -45,14 +44,17 @@ const useSearch = () => {
   const onKeydownSearch = useCallback(({ key }: KeyboardEvent<HTMLInputElement>): void => {
     if (key === 'Enter') {
       historySingleton.push(`?keyword=${keyword}`);
+      setSearchResults([]);
       handleSearch();
     }
-  }, [handleSearch, keyword]);
+  }, [handleSearch, keyword, setSearchResults]);
 
   useEffect(() => {
     if (!isNullOrUndefined(queryKeyword)) {
       handleSearch();
     }
+
+    return () => setSearchResults([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -60,9 +62,11 @@ const useSearch = () => {
     if (queryKeyword && queryKeyword.length > 0) {
       window.addEventListener('scroll', handleScroll, true);
 
-      return () => window.removeEventListener('scroll', handleScroll, true);
+      return () => {
+        window.removeEventListener('scroll', handleScroll, true);
+      }
     }
-  }, [handleScroll, queryKeyword]);
+  }, [handleScroll, queryKeyword, setSearchResults]);
 
   return {
     keyword,

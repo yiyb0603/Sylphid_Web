@@ -10,11 +10,11 @@ const HomeTitle = (): JSX.Element => {
   return (
     <div css={wrapper}>
       <div>
-        <div css={homeTitle}>링크 관리서비스 Sylphid</div>
+        <div css={homeTitle}>Sylphid</div>
 
         <div css={contentsWrapper}>
-          <p>단순히 링크만 단축하는 서비스가 아닙니다.</p>
-          <p>성공적인 마케팅에 도움이 되는 다양한 기능을 제공하고 있습니다.</p>
+          <p>단축 URL 및 번역 서비스를 제공합니다.</p>
+          <p>뉴스와 블로그 글을 검색할 수 있습니다.</p>
         </div>
 
         <Button
